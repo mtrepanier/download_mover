@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  download_mover:
+    build: .
+    environment:
+      WORKER_SLEEP_TIMEOUT: 10
+      FROM_TO: filmfrancais|Film Francais,filmenfants|Film Enfants,movies|Movies
+    volumes:
+      - ./src:/home/download_mover/app/src
+      - ./downloads:/home/download_mover/downloads
+      - ./medias:/home/download_mover/medias
